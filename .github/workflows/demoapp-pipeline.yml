@@ -46,6 +46,9 @@ jobs:
           AZ_APPLICATION_ID: ${{secrets.AZ_APPLICATION_ID}}
           AZ_ENCRYPTED_PASSWORD: ${{secrets.AZ_ENCRYPTED_PASSWORD}}
         run: |
+          Write-Host "Running tests..."
+          Write-Host "AZ_TENANT_ID: $env:AZ_TENANT_ID"
+          Write-Host "AZ_SUBSCRIPTION_ID: $env:AZ_SUBSCRIPTION_ID"
           ./DemoApp.Tests.ps1
 
       - name: Clean up resources

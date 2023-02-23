@@ -10,7 +10,7 @@ Describe 'Resource Group Tests' {
     #act
     $resourceGroup = Confirm-AzBPResourceGroup -ResourceGroupName $rgName
 
-    Write-Host ($resourceGroup.ResourceDetails | ConvertTo-Json -Depth 10)
+    Write-Host ($resourceGroup | ConvertTo-Json -Depth 10)
 
     #assert
     $resourceGroup.Success | Should -Be $true
